@@ -1,0 +1,22 @@
+[Unit]
+Description=Video stream server
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+#ExecStart=sh /home/maxbaraitsersmith/Type/DC/4_summer_2025/ants/ars_electronica/arselectronica2025-home/streaming_server/streaming_server_1.sh
+ExecStart=sh /home/max/Desktop/arselectronica2025-home/streaming_server/streaming_server_1.sh
+#ExecStartPre=
+#ExecStartPost=
+#ExecStop=
+#ExecReload=
+
+Type=simple
+Restart=always
+RestartSec=100ms
+#RestartSec=5s
+User=max
+#User=maxbaraitsersmith
+
+[Install]
+WantedBy=multi-user.target

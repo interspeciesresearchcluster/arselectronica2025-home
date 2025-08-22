@@ -6,7 +6,7 @@ import threading
 #host = '79.215.220.170'
 host = ''
 
-port = 9999
+port = 19061
 
 
 def handle_client(client_socket, client_address):
