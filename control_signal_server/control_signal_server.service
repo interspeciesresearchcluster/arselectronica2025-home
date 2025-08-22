@@ -5,7 +5,7 @@ StartLimitIntervalSec=0
 
 [Service]
 #ExecStart=sh /home/maxbaraitsersmith/Type/DC/4_summer_2025/ants/ars_electronica/arselectronica2025-home/control_signal_server/control_signal_server.sh
-ExecStart=sh /home/max/Desktop/arselectronica2025-home/control_signal_server/control_signal_server.sh
+ExecStart=sh /home/maxbaraitsersmith/Desktop/arselectronica2025-home/control_signal_server/control_signal_server.sh
 #ExecStartPre=
 #ExecStartPost=
 #ExecStop=
