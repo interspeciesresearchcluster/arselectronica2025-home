@@ -13,7 +13,7 @@ import threading
 
 PORT = '/dev/ttyUSB0'
 BAUD = 115200
-speedInterval = 0.1
+speedInterval = 0.5
 
 ardu = None
 
@@ -46,18 +46,18 @@ def updateDirection(message):
 def move():
     global ardu
     print(f"Moving: {speedX},{speedY}")
-    if speedX > 0:
-        ardu.write('1'.encode())
-    elif speedX < 0:
-        ardu.write('q'.encode())
-    elif speedY < 0:
-        ardu.write('3'.encode())
-    elif speedY < 0:
-        ardu.write('e'.encode())
+    # if speedX > 0:
+    #     ardu.write('1'.encode())
+    # elif speedX < 0:
+    #     ardu.write('q'.encode())
+    # elif speedY > 0:
+    #     ardu.write('3'.encode())
+    # elif speedY < 0:
+    #     ardu.write('e'.encode())
 
 def move_loop():
     global speedX, speedY
-    # move()
+    move()
 
     threading.Timer(speedInterval, move_loop).start()
 
