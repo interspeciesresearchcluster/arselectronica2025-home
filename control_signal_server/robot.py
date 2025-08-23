@@ -36,6 +36,10 @@ def updateDirection(message):
     elif speedX == 'Y':
         speedY = 0
 
+    print("updating direction!")
+    print(speedX)
+    print(speedY)
+
 def move():
     global ardu
     if speedX > 0:
@@ -48,6 +52,8 @@ def move():
         ardu.write('e'.encode())
 
 def move_loop():
+    global speedX, speedY
+
     print("MOVING!")
     print(speedX)
     print(speedY)
