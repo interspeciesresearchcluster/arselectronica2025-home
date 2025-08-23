@@ -17,7 +17,6 @@ def init():
     print('Initialising Robot')
     ardu= serial.Serial(PORT, BAUD, timeout=.1)
     print('Initialised Robot')
-
     # move_loop()
 
 def updateDirection(message):

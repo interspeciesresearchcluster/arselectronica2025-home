@@ -14,6 +14,7 @@ def handle_client(client_socket, client_address):
     print(f'Connected to {client_address}')
     try:
         while True:
+            print("Looking for data")
             data = client_socket.recv(1024)
             if not data:
                 break
