@@ -19,6 +19,7 @@ def init():
     print('Initialised Robot')
 
     threading.Timer(1.0, move_loop).start()
+    move_loop()
 
 def updateDirection(message):
     global speedX, speedY
