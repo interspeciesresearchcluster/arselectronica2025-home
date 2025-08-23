@@ -44,5 +44,5 @@ while True:
     client_thread = threading.Thread(target=handle_client, args=(client_socket, client_address))
     client_thread.start()
 
-    robot_thread = threading.Thread(target=robot.move_loop)
+    robot_thread = threading.Thread(target=robot.move_loop, args=())
     robot_thread.start()
