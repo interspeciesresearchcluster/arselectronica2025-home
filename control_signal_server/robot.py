@@ -46,6 +46,9 @@ def move():
 
 def move_loop():
     while True:
+        print("MOVING!")
+        print(speedX)
+        print(speedY)
         move()
         time.sleep(1)
 
