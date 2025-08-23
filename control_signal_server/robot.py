@@ -48,6 +48,9 @@ def move():
         ardu.write('e'.encode())
 
 def move_loop():
+    print("MOVING!")
+    print(speedX)
+    print(speedY)
     move()
 
 def finish():
