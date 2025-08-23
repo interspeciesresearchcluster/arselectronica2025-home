@@ -29,28 +29,19 @@ def init():
 
 def updateDirection(message):
     global speedX, speedY
-    print("pringing message: ")
-    print(message)
-    message = message[:2]
 
-    if message == 'X+':
+    if message[:2] == 'X+':
         speedX = 1
-        print("X+")
-    elif speedX == 'X-':
+    elif message[:2] == 'X-':
         speedX = -1
-        print("X-")
-    elif speedX == 'X':
+    elif message[:2] == 'X':
         speedX = 0
-        print("X")
-    elif speedX == 'Y+':
+    elif message[:2] == 'Y+':
         speedY = 1
-        print("Y+")
-    elif speedX == 'Y-':
+    elif message[:2] == 'Y-':
         speedY = -1
-        print("Y-")
-    elif speedX == 'Y':
+    elif message[:2] == 'Y':
         speedY = 0
-        print("Y")
 
 def move():
     global ardu
