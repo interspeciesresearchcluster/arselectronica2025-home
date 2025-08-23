@@ -14,14 +14,17 @@ def handle_client(client_socket, client_address):
     print(f'Connected to {client_address}')
     try:
         while True:
-            data = client_socket.recv(1024)
-            if not data:
+            try:
+                data = client_socket.recv(1024)
+                if not data:
+                    break
+                data = data.decode()
+                print(f'Received from {client_address}: {data}')
+                robot.updateDirection(data)
+                response = 'Message received successfully'.encode()
+                client_socket.send(response)
+            except:
                 break
-            data = data.decode()
-            print(f'Received from {client_address}: {data}')
-            robot.updateDirection(data)
-            response = 'Message received successfully'.encode()
-            client_socket.send(response)
     finally:
         client_socket.close()
         robot.finish()
