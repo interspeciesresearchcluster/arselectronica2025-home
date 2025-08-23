@@ -3,9 +3,17 @@ import serial
 import threading
 
 
+#KEYS:
+# Axis A, back and forth: 1 and q
+# Axis B, back and forth: 3 and e
+# Camera rotation: 4 and r
+# Tool: 5 and t
+# Zeroing position: z
+# Stop all motors: 0
+
 PORT = '/dev/ttyUSB0'
 BAUD = 115200
-KEYS = '1q3e4r5t0z'
+speedInterval = 0.1
 
 ardu = None
 
@@ -48,13 +56,9 @@ def move():
 
 def move_loop():
     global speedX, speedY
-
-    print("MOVING!")
-    print(speedX)
-    print(speedY)
     move()
 
-    threading.Timer(1.0, move_loop).start()
+    threading.Timer(speedInterval, move_loop).start()
 
 def finish():
     global ardu
