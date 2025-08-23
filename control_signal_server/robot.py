@@ -29,6 +29,8 @@ def init():
 
 def updateDirection(message):
     global speedX, speedY
+    print("pringing message: ")
+    print(message)
 
     if message == 'X+':
         speedX = 1
