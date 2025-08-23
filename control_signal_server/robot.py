@@ -32,16 +32,22 @@ def updateDirection(message):
 
     if message == 'X+':
         speedX = 1
+        print("X+")
     elif speedX == 'X-':
         speedX = -1
+        print("X-")
     elif speedX == 'X':
         speedX = 0
+        print("X")
     elif speedX == 'Y+':
         speedY = 1
+        print("Y+")
     elif speedX == 'Y-':
         speedY = -1
+        print("Y-")
     elif speedX == 'Y':
         speedY = 0
+        print("Y")
 
 def move():
     global ardu
