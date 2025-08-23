@@ -19,7 +19,7 @@ def handle_client(client_socket, client_address):
                 break
             data = data.decode()
             print(f'Received from {client_address}: {data}')
-            robot.move(data)
+            robot.updateDirection(data)
             response = 'Message received successfully'.encode()
             client_socket.send(response)
     finally:
@@ -43,3 +43,6 @@ while True:
     client_socket, client_address = server_socket.accept()
     client_thread = threading.Thread(target=handle_client, args=(client_socket, client_address))
     client_thread.start()
+
+    robot_thread = threading.Thread(target=robot.move_loop)
+    robot_thread.start()
