@@ -22,20 +22,18 @@ def init():
 def updateDirection(message):
     global speedX, speedY
 
-    if message == '+X':
+    if message == 'X+':
         speedX = 1
-    elif speedX == '-X':
+    elif speedX == 'X-':
         speedX = -1
     elif speedX == 'X':
         speedX = 0
-    elif speedX == '+Y':
+    elif speedX == 'Y+':
         speedY = 1
-    elif speedX == '-Y':
+    elif speedX == 'Y-':
         speedY = -1
     elif speedX == 'Y':
         speedY = 0
-
-    print("updating direction!")
 
 def move():
     global ardu
