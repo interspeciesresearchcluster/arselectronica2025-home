@@ -1,5 +1,6 @@
 import time
 import serial
+import threading
 
 
 PORT = '/dev/ttyUSB0'
@@ -16,6 +17,8 @@ def init():
     print('Initialising Robot')
     ardu= serial.Serial(PORT, BAUD, timeout=.1)
     print('Initialised Robot')
+
+    threading.Timer(1.0, move_loop).start()
 
 def updateDirection(message):
     global speedX, speedY
@@ -45,13 +48,10 @@ def move():
         ardu.write('e'.encode())
 
 def move_loop():
-    while True:
-        print("MOVING!")
-        print(speedX)
-        print(speedY)
-        move()
-        time.sleep(1)
-
+    print("MOVING!")
+    print(speedX)
+    print(speedY)
+    move()
 
 def finish():
     global ardu
