@@ -38,7 +38,7 @@ try:
 except socket.error as e:
     print(f'Error: {e}')
 
-robot.init()
+#robot.init()
 
 while True:
     client_socket, client_address = server_socket.accept()
