@@ -1,6 +1,7 @@
 import time
 import serial
 import threading
+import sys
 
 
 #KEYS:
@@ -46,14 +47,17 @@ def updateDirection(message):
 def move():
     global ardu
     # print(f"Moving: {speedX},{speedY}")
-    if speedX > 0:
-        ardu.write('1'.encode())
-    elif speedX < 0:
-        ardu.write('q'.encode())
-    elif speedY > 0:
-        ardu.write('3'.encode())
-    elif speedY < 0:
-        ardu.write('e'.encode())
+    try:
+        if speedX > 0:
+            ardu.write('1'.encode())
+        elif speedX < 0:
+            ardu.write('q'.encode())
+        elif speedY > 0:
+            ardu.write('3'.encode())
+        elif speedY < 0:
+            ardu.write('e'.encode())
+    except:
+        sys.exit(0)
 
 def move_loop():
     global speedX, speedY
