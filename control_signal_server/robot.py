@@ -31,6 +31,7 @@ def updateDirection(message):
     global speedX, speedY
     print("pringing message: ")
     print(message)
+    message = message[:2]
 
     if message == 'X+':
         speedX = 1
