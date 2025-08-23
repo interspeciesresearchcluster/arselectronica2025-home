@@ -22,15 +22,15 @@ def updateDirection(message):
 
     if message == '+X':
         speedX = 1
-    elif speedX= '-X':
+    elif speedX == '-X':
         speedX = -1
-    elif speedX= 'X':
+    elif speedX == 'X':
         speedX = 0
-    elif speedX= '+Y':
+    elif speedX == '+Y':
         speedY = 1
-    elif speedX= '-Y':
+    elif speedX == '-Y':
         speedY = -1
-    elif speedX= 'Y':
+    elif speedX == 'Y':
         speedY = 0
 
 def move():
