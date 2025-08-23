@@ -13,7 +13,7 @@ import threading
 
 PORT = '/dev/ttyUSB0'
 BAUD = 115200
-speedInterval = 0.5
+speedInterval = 0.1
 
 ardu = None
 
