@@ -18,8 +18,7 @@ def init():
     ardu= serial.Serial(PORT, BAUD, timeout=.1)
     print('Initialised Robot')
 
-    threading.Timer(1.0, move_loop).start()
-    move_loop()
+    threading.Timer(0.1, move_loop).start()
 
 def updateDirection(message):
     global speedX, speedY
@@ -49,9 +48,6 @@ def move():
         ardu.write('e'.encode())
 
 def move_loop():
-    print("MOVING!")
-    print(speedX)
-    print(speedY)
     move()
 
 def finish():
