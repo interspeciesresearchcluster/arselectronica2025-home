@@ -17,7 +17,7 @@ def init():
     print('Initialising Robot')
     ardu= serial.Serial(PORT, BAUD, timeout=.1)
     print('Initialised Robot')
-    # move_loop()
+    move_loop()
 
 def updateDirection(message):
     global speedX, speedY
@@ -36,8 +36,6 @@ def updateDirection(message):
         speedY = 0
 
     print("updating direction!")
-    print(speedX)
-    print(speedY)
 
 def move():
     global ardu

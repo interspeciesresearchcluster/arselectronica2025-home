@@ -14,7 +14,6 @@ def handle_client(client_socket, client_address):
     print(f'Connected to {client_address}')
     try:
         while True:
-            print("Looking for data")
             data = client_socket.recv(1024)
             if not data:
                 break
@@ -38,7 +37,7 @@ try:
 except socket.error as e:
     print(f'Error: {e}')
 
-#robot.init()
+robot.init()
 
 while True:
     client_socket, client_address = server_socket.accept()
