@@ -16,8 +16,7 @@ def init():
 
 def move(message):
     global ardu
-    for i in range (10):
-        ardu.write(message.encode())
+    ardu.write(message.encode())
 
 def finish():
     global ardu
