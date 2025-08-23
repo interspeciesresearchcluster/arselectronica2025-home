@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ffmpeg \
+    -loglevel debug \
     `#AUDIO INPUT` \
     -an  `# dont use audio` \
     `#VIDEO INPUT` \

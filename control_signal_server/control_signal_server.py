@@ -1,5 +1,6 @@
 import socket
 import threading
+import robot
 
 #host = 'multispeciesresearchcluster.freeddns.org'
 #host = '192.168.2.211'
@@ -16,11 +17,14 @@ def handle_client(client_socket, client_address):
             data = client_socket.recv(1024)
             if not data:
                 break
-            print(f'Received from {client_address}: {data.decode()}')
+            data = data.decode()
+            print(f'Received from {client_address}: {data}')
+            robot.move(data)
             response = 'Message received successfully'.encode()
             client_socket.send(response)
     finally:
         client_socket.close()
+        robot.finish()
 
 
 # Create a TCP socket
@@ -32,6 +36,8 @@ try:
     print(f'Server is listening on port {port}...')
 except socket.error as e:
     print(f'Error: {e}')
+
+robot.init()
 
 while True:
     client_socket, client_address = server_socket.accept()

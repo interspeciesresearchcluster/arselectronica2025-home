@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ffmpeg \
+    -loglevel debug \
     `#AUDIO INPUT` \
     `#-an`  `# dont use audio` \
     -thread_queue_size 1024 `#buffer size for packets waiting to be encoded (seems must be defined twice?)` \
