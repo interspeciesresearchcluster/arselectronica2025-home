@@ -45,6 +45,7 @@ def updateDirection(message):
 
 def move():
     global ardu
+    print(f"Moving: {speedX},{speedY}")
     if speedX > 0:
         ardu.write('1'.encode())
     elif speedX < 0:
@@ -56,7 +57,7 @@ def move():
 
 def move_loop():
     global speedX, speedY
-    move()
+    # move()
 
     threading.Timer(speedInterval, move_loop).start()
 
