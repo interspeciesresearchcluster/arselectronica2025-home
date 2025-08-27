@@ -5,8 +5,6 @@ StartLimitIntervalSec=0
 
 [Service]
 ExecStart=sh /home/maxbaraitsersmith/Desktop/arselectronica2025-home/control_signal_server/control_signal_server.sh
-StandardOutput=journal
-StandardError=journal
 #ExecStartPre=
 #ExecStartPost=
 #ExecStop=
