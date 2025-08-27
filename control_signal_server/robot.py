@@ -35,6 +35,7 @@ def updateDirection(message):
     elif message == 'Joystick 0: X-':
         speedX = -1
     elif message == 'Joystick 0: X':
+        print("okayyyyyy")
         speedX = 0
     elif message == 'Joystick 0: Y+':
         speedY = 1
