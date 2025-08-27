@@ -30,17 +30,17 @@ def init():
 def updateDirection(message):
     global speedX, speedY
 
-    if message[:2] == 'X+':
+    if message[:2] == 'Joystick 0: X+':
         speedX = 1
-    elif message[:2] == 'X-':
+    elif message[:2] == 'Joystick 0: X-':
         speedX = -1
-    elif message[:2] == 'X':
+    elif message[:2] == 'Joystick 0: X':
         speedX = 0
-    elif message[:2] == 'Y+':
+    elif message[:2] == 'Joystick 0: Y+':
         speedY = 1
-    elif message[:2] == 'Y-':
+    elif message[:2] == 'Joystick 0: Y-':
         speedY = -1
-    elif message[:2] == 'Y':
+    elif message[:2] == 'Joystick 0: Y':
         speedY = 0
 
 def move():

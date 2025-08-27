@@ -1,6 +1,6 @@
 import socket
 import threading
-#import robot
+import robot
 
 host = ''
 
@@ -16,13 +16,13 @@ def handle_client(client_socket, client_address):
                 break
             data = data.decode()
             print(f'Received from {client_address}: {data}')
-            #robot.updateDirection(data)
+            robot.updateDirection(data)
             response = 'Message received successfully'.encode()
             client_socket.send(response)
     finally:
         print(f'Disconnected from {client_address}')
         client_socket.close()
-        #robot.finish()
+        robot.finish()
 
 
 # Create a TCP socket
@@ -35,7 +35,7 @@ try:
 except socket.error as e:
     print(f'Error: {e}')
 
-#robot.init()
+robot.init()
 
 while True:
     client_socket, client_address = server_socket.accept()
