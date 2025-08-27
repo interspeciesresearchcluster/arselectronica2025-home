@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#STREAMING SERVER 1: AUDIO ONLY
+
 ffmpeg \
     -loglevel debug \
     `#AUDIO INPUT` \
