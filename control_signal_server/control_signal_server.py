@@ -10,6 +10,7 @@ port = 19061
 def handle_client(client_socket, client_address):
     print(f'Connected to {client_address}')
     try:
+        robot.init()
         while True:
             data = client_socket.recv(1024)
             if not data:
@@ -34,8 +35,6 @@ try:
     print(f'Server is listening on port {port}...')
 except socket.error as e:
     print(f'Error: {e}')
-
-robot.init()
 
 while True:
     client_socket, client_address = server_socket.accept()
