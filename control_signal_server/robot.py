@@ -30,21 +30,17 @@ def init():
 def updateDirection(message):
     global speedX, speedY
 
-    print(repr(message))
-    print(message == 'Button press: 0')
-
-
-    if message[:2] == 'Joystick 0: X+':
+    if message == 'Joystick 0: X+':
         speedX = 1
-    elif message[:2] == 'Joystick 0: X-':
+    elif message == 'Joystick 0: X-':
         speedX = -1
-    elif message[:2] == 'Joystick 0: X':
+    elif message == 'Joystick 0: X':
         speedX = 0
-    elif message[:2] == 'Joystick 0: Y+':
+    elif message == 'Joystick 0: Y+':
         speedY = 1
-    elif message[:2] == 'Joystick 0: Y-':
+    elif message == 'Joystick 0: Y-':
         speedY = -1
-    elif message[:2] == 'Joystick 0: Y':
+    elif message == 'Joystick 0: Y':
         speedY = 0
 
 def move():
