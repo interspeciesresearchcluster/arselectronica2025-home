@@ -30,14 +30,14 @@ def init():
 def updateDirection(message):
     global speedX, speedY
 
-    print(message == 'Joystick 0: X')
+    print(message == 'Joystick 0: X+')
 
     if message == 'Joystick 0: X+':
+        print("okayyyyyy")
         speedX = 1
     elif message == 'Joystick 0: X-':
         speedX = -1
     elif message == 'Joystick 0: X':
-        print("okayyyyyy")
         speedX = 0
     elif message == 'Joystick 0: Y+':
         speedY = 1
