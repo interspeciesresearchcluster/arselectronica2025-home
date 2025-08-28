@@ -14,7 +14,7 @@ ffmpeg \
     -ac 2 `#num of audio channels` \
     -ar 44100 `#audio sample rate` \
     -acodec pcm_s32le `#set audio codec/format` \
-    -i hw:2,0 `#audio input device` \
+    -i plughw:0,0 `#audio input device` \
     `#VIDEO INPUT` \
     -vn \
     `#TRANSCODING VIDEO` \
