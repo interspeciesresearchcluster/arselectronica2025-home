@@ -7,7 +7,7 @@ ffmpeg \
     `#AUDIO INPUT` \
     -an  `# dont use audio` \
     `#LOW LATENCY FLAGS` \
-    `#-flags low_delay --- this creates pixelation for high resolutions` \
+    `#-flags low_delay this creates pixelation for high resolutions` \
     -fflags nobuffer `#apparently this reduces latency a bit` \
     `#VIDEO INPUT` \
     -r 30  `#input framerate` \
@@ -18,7 +18,7 @@ ffmpeg \
     -r 30  `# output framerate` \
     `#TRANSCODING VIDEO` \
     -c:v mpeg2video  `#use mpeg2video encoder` \
-    -qscale:v 20  `#quality scale between around 2 and 30` \
+    -qscale:v 2  `#quality scale between around 2 and 30` \
     `#TRANSMITTING` \
     -f mpegts - `# output format: mpeg transport stream` \
     | nc -l -p 19062 `#send output over tcp`;
