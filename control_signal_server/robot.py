@@ -33,8 +33,6 @@ def updateDirection(message):
     global moveSpeedX, moveSpeedY
     global cameraSpeedX, cameraSpeedY
 
-    print(message)
-
     if message == 'Joystick 0: X+':
         moveSpeedX = 1
     elif message == 'Joystick 0: X-':
@@ -62,8 +60,8 @@ def updateDirection(message):
 
 def move():
     global ardu
-    # print(f"Moving: {moveSpeedX},{moveSpeedY}")
-    # print(f"Camera: {cameraSpeedX},{cameraSpeedY}")
+    print(f"Moving: {moveSpeedX},{moveSpeedY}")
+    print(f"Camera: {cameraSpeedX},{cameraSpeedY}")
 
     if moveSpeedX > 0:
         ardu.write('3'.encode())
