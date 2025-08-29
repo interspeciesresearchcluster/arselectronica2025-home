@@ -47,13 +47,13 @@ def move():
     global ardu
     print(f"Moving: {speedX},{speedY}")
     if speedX > 0:
-        ardu.write('1'.encode())
-    elif speedX < 0:
-        ardu.write('q'.encode())
-    elif speedY > 0:
         ardu.write('3'.encode())
-    elif speedY < 0:
+    elif speedX < 0:
         ardu.write('e'.encode())
+    elif speedY > 0:
+        ardu.write('1'.encode())
+    elif speedY < 0:
+        ardu.write('q'.encode())
 
 def move_loop():
     global speedX, speedY
