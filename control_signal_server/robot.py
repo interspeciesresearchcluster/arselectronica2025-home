@@ -13,12 +13,14 @@ import threading
 
 PORT = '/dev/ttyUSB0'
 BAUD = 115200
-speedInterval = 0.05
+speedInterval = 0.1
 
 ardu = None
 
-speedX = 0
-speedY = 0
+moveSpeedX = 0
+moveSpeedY = 0
+cameraSpeedX = 0
+cameraSpeedY = 0
 
 def init():
     global ardu
@@ -28,35 +30,57 @@ def init():
     move_loop()
 
 def updateDirection(message):
-    global speedX, speedY
+    global moveSpeedX, moveSpeedY
+    global cameraSpeedX, cameraSpeedY
 
     if message == 'Joystick 0: X+':
-        speedX = 1
+        moveSpeedX = 1
     elif message == 'Joystick 0: X-':
-        speedX = -1
+        moveSpeedX = -1
     elif message == 'Joystick 0: X':
-        speedX = 0
+        moveSpeedX = 0
     elif message == 'Joystick 0: Y+':
-        speedY = 1
+        moveSpeedY = 1
     elif message == 'Joystick 0: Y-':
-        speedY = -1
+        moveSpeedY = -1
     elif message == 'Joystick 0: Y':
-        speedY = 0
+        moveSpeedY = 0
+    elif message == 'Joystick 1: X+':
+        cameraSpeedX = 1
+    elif message == 'Joystick 1: X-':
+        cameraSpeedX = -1
+    elif message == 'Joystick 1: X':
+        cameraSpeedX = 0
+    elif message == 'Joystick 1: Y+':
+        cameraSpeedY = 1
+    elif message == 'Joystick 1: Y-':
+        cameraSpeedY = -1
+    elif message == 'Joystick 1: Y':
+        cameraSpeedY = 0
 
 def move():
     global ardu
-    print(f"Moving: {speedX},{speedY}")
-    if speedX > 0:
+    print(f"Moving: {moveSpeedX},{moveSpeedY}")
+    
+    if moveSpeedX > 0:
         ardu.write('3'.encode())
-    elif speedX < 0:
+    elif moveSpeedX < 0:
         ardu.write('e'.encode())
-    elif speedY > 0:
+    elif moveSpeedY > 0:
         ardu.write('q'.encode())
-    elif speedY < 0:
+    elif moveSpeedY < 0:
         ardu.write('1'.encode())
+    elif cameraSpeedX > 0:
+        ardu.write('4'.encode())
+    elif cameraSpeedX < 0:
+        ardu.write('r'.encode())
+    elif cameraSpeedY > 0:
+        ardu.write('5'.encode())
+    elif cameraSpeedY < 0:
+        ardu.write('t'.encode())
 
 def move_loop():
-    global speedX, speedY
+    global moveSpeedX, moveSpeedY
     move()
 
     threading.Timer(speedInterval, move_loop).start()
