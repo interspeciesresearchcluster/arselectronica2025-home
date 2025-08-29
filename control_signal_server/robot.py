@@ -47,17 +47,17 @@ def updateDirection(message):
         moveSpeedY = -1
     elif message == 'Joystick 0: Y':
         moveSpeedY = 0
-    elif message == 'Joystick 1: X+':
+    elif message == 'Button down: 0':
         cameraSpeedX = 1
-    elif message == 'Joystick 1: X-':
+    elif message == 'Button down: 1':
         cameraSpeedX = -1
-    elif message == 'Joystick 1: X':
+    elif message == 'Button up: 0' or message == 'Button up: 1':
         cameraSpeedX = 0
-    elif message == 'Joystick 1: Y+':
+    elif message == 'Button down: 2':
         cameraSpeedY = 1
-    elif message == 'Joystick 1: Y-':
+    elif message == 'Button down: 3':
         cameraSpeedY = -1
-    elif message == 'Joystick 1: Y':
+    elif message == 'Button up: 2' or message == 'Button up: 3':
         cameraSpeedY = 0
 
 def move():
