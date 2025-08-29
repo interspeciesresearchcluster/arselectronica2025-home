@@ -33,6 +33,8 @@ def updateDirection(message):
     global moveSpeedX, moveSpeedY
     global cameraSpeedX, cameraSpeedY
 
+    print(message)
+
     if message == 'Joystick 0: X+':
         moveSpeedX = 1
     elif message == 'Joystick 0: X-':
