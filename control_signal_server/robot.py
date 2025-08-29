@@ -33,7 +33,7 @@ def updateDirection(message):
     global moveSpeedX, moveSpeedY
     global cameraSpeedX, cameraSpeedY
 
-    # print(message)
+    print(message)
 
     if message == 'Joystick 0: X+':
         moveSpeedX = 1
@@ -47,18 +47,18 @@ def updateDirection(message):
         moveSpeedY = -1
     elif message == 'Joystick 0: Y':
         moveSpeedY = 0
-    # elif message == 'Button down: 0':
-    #     cameraSpeedX = 1
-    # elif message == 'Button down: 1':
-    #     cameraSpeedX = -1
-    # elif message == 'Button up: 0' or message == 'Button up: 1':
-    #     cameraSpeedX = 0
-    # elif message == 'Button down: 2':
-    #     cameraSpeedY = 1
-    # elif message == 'Button down: 3':
-    #     cameraSpeedY = -1
-    # elif message == 'Button up: 2' or message == 'Button up: 3':
-    #     cameraSpeedY = 0
+    elif message == 'Button down: 0':
+        cameraSpeedX = 1
+    elif message == 'Button down: 1':
+        cameraSpeedX = -1
+    elif message == 'Button up: 0' or message == 'Button up: 1':
+        cameraSpeedX = 0
+    elif message == 'Button down: 2':
+        cameraSpeedY = 1
+    elif message == 'Button down: 3':
+        cameraSpeedY = -1
+    elif message == 'Button up: 2' or message == 'Button up: 3':
+        cameraSpeedY = 0
 
 def move():
     global ardu
@@ -75,15 +75,15 @@ def move():
     elif moveSpeedY < 0:
         ardu.write('1'.encode())
     
-    # if cameraSpeedX > 0:
-    #     ardu.write('3'.encode())
-    # elif cameraSpeedX < 0:
-    #     ardu.write('e'.encode())
+    if cameraSpeedX > 0:
+        ardu.write('3'.encode())
+    elif cameraSpeedX < 0:
+        ardu.write('e'.encode())
     
-    # if cameraSpeedY > 0:
-    #     ardu.write('q'.encode())
-    # elif cameraSpeedY < 0:
-    #     ardu.write('1'.encode())
+    if cameraSpeedY > 0:
+        ardu.write('q'.encode())
+    elif cameraSpeedY < 0:
+        ardu.write('1'.encode())
 
 def move_loop():
     global moveSpeedX, moveSpeedY
