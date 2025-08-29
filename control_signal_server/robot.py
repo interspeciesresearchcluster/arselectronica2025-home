@@ -61,7 +61,8 @@ def updateDirection(message):
 def move():
     global ardu
     print(f"Moving: {moveSpeedX},{moveSpeedY}")
-    
+    print(f"Camera: {cameraSpeedX},{cameraSpeedY}")
+
     if moveSpeedX > 0:
         ardu.write('3'.encode())
     elif moveSpeedX < 0:
