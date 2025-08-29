@@ -75,15 +75,15 @@ def move():
     elif moveSpeedY < 0:
         ardu.write('1'.encode())
     
-    if cameraSpeedX > 0:
-        ardu.write('3'.encode())
-    elif cameraSpeedX < 0:
-        ardu.write('e'.encode())
+    # if cameraSpeedX > 0:
+    #     ardu.write('3'.encode())
+    # elif cameraSpeedX < 0:
+    #     ardu.write('e'.encode())
     
-    if cameraSpeedY > 0:
-        ardu.write('q'.encode())
-    elif cameraSpeedY < 0:
-        ardu.write('1'.encode())
+    # if cameraSpeedY > 0:
+    #     ardu.write('q'.encode())
+    # elif cameraSpeedY < 0:
+    #     ardu.write('1'.encode())
 
 def move_loop():
     global moveSpeedX, moveSpeedY
