@@ -76,9 +76,9 @@ def move():
         ardu.write('1'.encode())
     
     if cameraSpeedX > 0:
-        ardu.write('4'.encode())
-    elif cameraSpeedX < 0:
         ardu.write('r'.encode())
+    elif cameraSpeedX < 0:
+        ardu.write('4'.encode())
     
     if cameraSpeedY > 0:
         ardu.write('5'.encode())
