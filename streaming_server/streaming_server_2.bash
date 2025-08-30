@@ -27,7 +27,7 @@ ffmpeg \
     -ac 2 `#num of audio channels` \
     -ar 44100 `#audio sample rate` \
     -acodec pcm_s32le `#set audio codec/format` \
-    -i plughw:0,0 `#audio input device` \
+    -i plughw:2,0 `#audio input device` \
     `#LOW LATENCY FLAGS` \
     `#-flags low_delay this creates pixelation for high resolutions` \
     -fflags nobuffer `#apparently this reduces latency a bit` \
