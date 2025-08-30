@@ -11,7 +11,7 @@ trap cleanup EXIT INT TERM
 mkfifo "$FIFO"
 
 # Start netcat listener reading from the FIFO
-nc -l -p 19062 < "$FIFO" &
+nc -l -p 19063 < "$FIFO" &
 NETCAT_PID=$!
 
 ffmpeg \
