@@ -6,6 +6,9 @@ FIFO=/tmp/streaming_server_1_pipe
 
 trap cleanup EXIT INT TERM
 
+#Reset the usb camera device
+sudo usbreset 292A-AR0230
+
 # Remove the FIFO if it already exists
 [[ -p "$FIFO" ]] && rm "$FIFO"
 mkfifo "$FIFO"
