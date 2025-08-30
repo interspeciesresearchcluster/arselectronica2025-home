@@ -17,6 +17,9 @@ NETCAT_PID=$!
 ffmpeg \
     -loglevel debug \
     -err_detect explode \
+    `#LOW LATENCY FLAGS` \
+    -flags low_delay `# this creates pixelation for high resolutions` \
+    -fflags nobuffer `#apparently this reduces latency a bit` \
     `#AUDIO INPUT` \
     `#-an   dont use audio` \
     -thread_queue_size 1024 `#buffer size for packets waiting to be encoded (seems must be defined twice?)` \

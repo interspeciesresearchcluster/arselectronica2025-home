@@ -26,8 +26,8 @@ ffmpeg \
     -r 30  `#input framerate` \
     -f v4l2  `#use video4linux2` \
     -s 1920x1080  `#input resolution` \
-    -i /dev/video4  `#input device` \
-    -input_format h264  `#input format` \
+    -i /dev/video0  `#input device` \
+    -input_format yuyv422  `#input format` \
     -r 30  `# output framerate` \
     `#TRANSCODING VIDEO` \
     -c:v mpeg2video  `#use mpeg2video encoder` \
