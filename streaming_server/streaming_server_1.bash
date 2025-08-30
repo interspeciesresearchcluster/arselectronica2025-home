@@ -39,7 +39,6 @@ FFMPEG_PID=$!
 
 # Wait for ffmpeg to finish
 wait $FFMPEG_PID
-FFMPEG_EXIT_CODE=$?
 
 function cleanup {
     echo "Cleaning up..."
