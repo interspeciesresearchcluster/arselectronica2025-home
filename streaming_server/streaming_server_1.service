@@ -12,7 +12,7 @@ ExecStart=bash /home/maxbaraitsersmith/Desktop/arselectronica2025-home/streaming
 
 Type=simple
 Restart=always
-RestartSec=5s
+RestartSec=30s
 User=root
 #User=maxbaraitsersmith
 
