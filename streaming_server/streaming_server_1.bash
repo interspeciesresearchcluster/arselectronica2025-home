@@ -30,11 +30,11 @@ ffmpeg \
     -f v4l2  `#use video4linux2` \
     -s 1920x1080  `#input resolution` \
     -i /dev/video4  `#input device` \
-    -input_format yuyv422  `#input format` \
+    -input_format h264  `#input format` \
     -r 30  `# output framerate` \
     `#TRANSCODING VIDEO` \
     -c:v mpeg2video  `#use mpeg2video encoder` \
-    -qscale:v 12  `#quality scale between around 2 and 30` \
+    -qscale:v 2  `#quality scale between around 2 and 30` \
     `#TRANSMITTING` \
     -f mpegts - `# output format: mpeg transport stream` \
     > "$FIFO" &
