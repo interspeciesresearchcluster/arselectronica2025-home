@@ -22,7 +22,7 @@ ffmpeg \
     -err_detect explode \
     -flags low_delay `# this creates pixelation for high resolutions` \
     -fflags nobuffer `#apparently this reduces latency a bit` \
-    -threads 2 \
+    -g 25 -bf 0 `# chatgpt recommends` \
     `#AUDIO INPUT` \
     -an  `# dont use audio` \
     `#LOW LATENCY FLAGS` \
