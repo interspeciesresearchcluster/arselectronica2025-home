@@ -22,6 +22,8 @@ ffmpeg \
     -err_detect explode \
     -flags low_delay `# this creates pixelation for high resolutions` \
     -fflags nobuffer `#apparently this reduces latency a bit` \
+    -preset ultrafast \
+    -tune zerolatency \
     `#AUDIO INPUT` \
     -an  `# dont use audio` \
     `#LOW LATENCY FLAGS` \
