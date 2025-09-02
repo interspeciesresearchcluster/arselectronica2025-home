@@ -28,7 +28,7 @@ ffmpeg \
     `#VIDEO INPUT` \
     -r 25  `#input framerate` \
     -f v4l2  `#use video4linux2` \
-    -s 1920x1080  `#input resolution` \
+    -s 1280x720  `#input resolution` \
     -i /dev/video4  `#input device` \
     -input_format h264  `#input format` \
     -r 25  `# output framerate` \
