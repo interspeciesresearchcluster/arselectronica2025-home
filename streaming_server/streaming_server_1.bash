@@ -18,7 +18,7 @@ nc -l -p 19062 < "$FIFO" &
 NETCAT_PID=$!
 
 ffmpeg \
-    -loglevel debug \
+    `#-loglevel debug ` \
     -err_detect explode \
     `#AUDIO INPUT` \
     -an  `# dont use audio` \
