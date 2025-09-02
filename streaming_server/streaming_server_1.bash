@@ -32,8 +32,7 @@ ffmpeg \
     -r 25  `# output framerate` \
     `#TRANSCODING VIDEO` \
     `# -vf "crop=1000:1000:200:200" crop` \
-    -c:v libx264  `#use mpeg2video encoder` \
-    -preset ultrafast -tune zerolatency \
+    -c:v copy  `#use mpeg2video encoder` \
     -qscale:v 6  `#quality scale between around 2 and 30` \
     `#TRANSMITTING` \
     -f mpegts - `# output format: mpeg transport stream` \
