@@ -33,7 +33,7 @@ ffmpeg \
     -input_format h264  `#input format` \
     -r 25  `# output framerate` \
     `#TRANSCODING VIDEO` \
-    -vf "crop=1000:1000:200:200" \ `# crop`
+    -vf "crop=1000:1000:200:200" `# crop` \
     -c:v mpeg2video  `#use mpeg2video encoder` \
     -qscale:v 2  `#quality scale between around 2 and 30` \
     `#TRANSMITTING` \
